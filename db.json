@@ -1,0 +1,31 @@
+{
+  "registros": [
+    {
+      "id": 1,
+      "nombre": "Laura Martinez",
+      "correo": "laura@example.com",
+      "telefono": "3001234567",
+      "interes": "Productos agricolas",
+      "comentario": "Deseo conocer los productos disponibles en la feria rural.",
+      "fecha": "2026-06-01T10:15:00.000Z"
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos Rios",
+      "correo": "carlos@example.com",
+      "telefono": "3112223344",
+      "interes": "Talleres comunitarios",
+      "comentario": "Me interesa participar en talleres de tecnologia para la comunidad.",
+      "fecha": "2026-06-01T11:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "nombre": "Marta Gomez",
+      "correo": "marta@example.com",
+      "telefono": "3225556677",
+      "interes": "Emprendimientos locales",
+      "comentario": "Quiero ver oportunidades para mostrar productos de mi familia.",
+      "fecha": "2026-06-02T09:05:00.000Z"
+    }
+  ]
+}

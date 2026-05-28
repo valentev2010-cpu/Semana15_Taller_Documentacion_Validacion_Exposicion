@@ -1,0 +1,96 @@
+:root {
+  --rural-green: #1f7a4d;
+  --rural-green-dark: #145c39;
+  --rural-sand: #f6f1e7;
+  --rural-ink: #1f2937;
+}
+
+body {
+  color: var(--rural-ink);
+  background: #ffffff;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #ffffff;
+  color: #000000;
+  padding: 0.75rem 1rem;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.hero-section {
+  background:
+    linear-gradient(120deg, rgba(20, 92, 57, 0.95), rgba(31, 122, 77, 0.84)),
+    radial-gradient(circle at top right, rgba(255,255,255,0.3), transparent 35%);
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.bg-section {
+  background: var(--rural-sand);
+}
+
+.form-card,
+.stat-card,
+.card {
+  border-radius: 1rem;
+}
+
+.icon-circle {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e6f4ed;
+  color: var(--rural-green-dark);
+  font-size: 1.35rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--rural-green);
+  box-shadow: 0 0 0 0.25rem rgba(31, 122, 77, 0.18);
+}
+
+.btn-success {
+  background: var(--rural-green);
+  border-color: var(--rural-green);
+}
+
+.btn-success:hover {
+  background: var(--rural-green-dark);
+  border-color: var(--rural-green-dark);
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+/* TODO ESTUDIANTE: revisa el diseno responsive.
+   Si ves elementos muy pegados en celulares, ajusta espaciados,
+   tamanos de texto o margenes en esta media query. */
+@media (max-width: 576px) {
+  .display-5 {
+    font-size: 2rem;
+  }
+
+  .hero-card {
+    padding: 1.25rem;
+  }
+}

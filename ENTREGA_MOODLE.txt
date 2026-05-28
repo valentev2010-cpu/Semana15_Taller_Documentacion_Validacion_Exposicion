@@ -1,0 +1,9 @@
+Antes de subir a Moodle:
+
+1. Ejecuta npm run check.
+2. Verifica que README_ENTREGA.md este completo.
+3. Verifica que docs/bitacora-validacion.md tenga minimo 5 pruebas.
+4. Verifica que docs/guion-exposicion.md este completo.
+5. Agrega capturas en evidencias/.
+6. Elimina node_modules si existe.
+7. Comprime la carpeta completa en ZIP.

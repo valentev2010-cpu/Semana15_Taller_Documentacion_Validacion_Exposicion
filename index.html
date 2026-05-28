@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Proyecto de practica para documentacion, validacion, correccion y exposicion tecnica." />
+    <title>Feria Rural Digital - Semana 15</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+    <header class="hero-section text-white">
+      <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-light border-opacity-25">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-flower1 me-2" aria-hidden="true"></i>
+            Feria Rural Digital
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegacion">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+              <li class="nav-item"><a class="nav-link" href="#registros">Registros</a></li>
+              <li class="nav-item"><a class="nav-link" href="#dashboard">Resumen</a></li>
+              <li class="nav-item"><a class="nav-link" href="#documentacion">Documentacion</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="container py-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <p class="badge text-bg-light text-success mb-3">Semana 15 - Taller practico</p>
+            <h1 class="display-5 fw-bold">Documenta, valida, corrige y prepara tu exposicion tecnica</h1>
+            <p class="lead mt-3">En este proyecto vas a registrar visitantes interesados en una feria rural, revisar pruebas, guardar datos con JSON Server y completar la documentacion tecnica de tu entrega.</p>
+            <div class="d-flex gap-2 flex-wrap mt-4">
+              <a href="#registro" class="btn btn-light btn-lg">Probar formulario</a>
+              <a href="#documentacion" class="btn btn-outline-light btn-lg">Ver tareas del taller</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="hero-card shadow-lg" role="img" aria-label="Resumen del proyecto Feria Rural Digital">
+              <h2 class="h4">Objetivo del proyecto</h2>
+              <p>Demostrar que una solucion web debe funcionar, estar validada, documentada y preparada para ser explicada.</p>
+              <ul class="list-unstyled mb-0">
+                <li><i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>Validaciones</li>
+                <li><i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>Base local con JSON Server</li>
+                <li><i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>Bitacora de pruebas</li>
+                <li><i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>Guion de exposicion</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main id="contenido-principal">
+      <section class="container py-5" id="registro">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <h2 class="fw-bold">Registro de visitantes</h2>
+            <p class="text-muted">Completa el formulario y verifica que los datos se guarden correctamente en JSON Server.</p>
+            <div class="alert alert-info small" role="alert">
+              Revisa la consola y la ruta <strong>http://localhost:3001/registros</strong> para comprobar el funcionamiento.
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <form id="formRegistro" class="card shadow-sm border-0 form-card" novalidate>
+              <div class="card-body p-4">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre completo</label>
+                    <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Ejemplo: Ana Perez" autocomplete="name" />
+                    <div class="invalid-feedback" id="error-nombre"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="correo" class="form-label">Correo electronico</label>
+                    <input id="correo" name="correo" type="email" class="form-control" placeholder="ana@correo.com" autocomplete="email" />
+                    <div class="invalid-feedback" id="error-correo"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input id="telefono" name="telefono" type="tel" class="form-control" placeholder="3001234567" autocomplete="tel" />
+                    <div class="form-text">Reto: ajusta la validacion para exigir exactamente 10 digitos.</div>
+                    <div class="invalid-feedback" id="error-telefono"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="interes" class="form-label">Interes principal</label>
+                    <select id="interes" name="interes" class="form-select">
+                      <option value="">Selecciona una opcion</option>
+                      <option value="Productos agricolas">Productos agricolas</option>
+                      <option value="Talleres comunitarios">Talleres comunitarios</option>
+                      <option value="Emprendimientos locales">Emprendimientos locales</option>
+                      <option value="Actividades escolares">Actividades escolares</option>
+                    </select>
+                    <div class="invalid-feedback" id="error-interes"></div>
+                  </div>
+                  <div class="col-12">
+                    <label for="comentario" class="form-label">Comentario</label>
+                    <textarea id="comentario" name="comentario" class="form-control" rows="4" placeholder="Escribe una necesidad, idea o pregunta"></textarea>
+                    <div class="form-text">El comentario debe tener minimo 15 caracteres.</div>
+                    <div class="invalid-feedback" id="error-comentario"></div>
+                  </div>
+                </div>
+                <div class="d-flex gap-2 mt-4 flex-wrap">
+                  <button type="submit" class="btn btn-success btn-lg">
+                    <i class="bi bi-send me-2" aria-hidden="true"></i>Guardar registro
+                  </button>
+                  <button type="reset" class="btn btn-outline-secondary btn-lg" id="btnLimpiar">Limpiar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="container py-5 bg-section rounded-4" id="registros">
+        <div class="d-flex justify-content-between align-items-start gap-3 flex-wrap mb-4">
+          <div>
+            <h2 class="fw-bold">Registros guardados</h2>
+            <p class="text-muted mb-0">Estos datos se consultan desde JSON Server.</p>
+          </div>
+          <button class="btn btn-outline-success" id="btnRecargar">
+            <i class="bi bi-arrow-clockwise me-1" aria-hidden="true"></i>Recargar datos
+          </button>
+        </div>
+        <div class="table-responsive card shadow-sm border-0">
+          <table class="table table-hover align-middle mb-0">
+            <caption class="visually-hidden">Tabla de registros de visitantes</caption>
+            <thead class="table-success">
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Interes</th>
+                <th scope="col">Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="tablaRegistros">
+              <tr><td colspan="5" class="text-center p-4">Cargando registros...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="container py-5" id="dashboard">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-4">
+            <div class="card stat-card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <span class="icon-circle"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
+                <h2 class="h5 mt-3">Total de registros</h2>
+                <p class="display-5 fw-bold text-success mb-0" id="totalRegistros">0</p>
+                <p class="text-muted small mb-0">Dato calculado desde la base local.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <h2 class="h5">Intereses registrados</h2>
+                <p class="text-muted small">Grafico generado con Chart.js.</p>
+                <canvas id="graficoIntereses" height="120" aria-label="Grafico de intereses de visitantes" role="img"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container py-5" id="documentacion">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h2 class="fw-bold">Tareas del taller</h2>
+            <p class="text-muted">Usa esta lista como guia rapida. La explicacion completa esta en el README y en la carpeta docs.</p>
+          </div>
+          <div class="col-lg-8">
+            <div class="accordion" id="accordionTareas">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tarea1">1. Completa la documentacion tecnica</button>
+                </h3>
+                <div id="tarea1" class="accordion-collapse collapse show" data-bs-parent="#accordionTareas">
+                  <div class="accordion-body">Trabaja en <code>README_ENTREGA.md</code>. Explica tecnologias, instalacion, ejecucion, estructura, funcionalidades, pruebas y evidencias.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tarea2">2. Registra pruebas y correcciones</button>
+                </h3>
+                <div id="tarea2" class="accordion-collapse collapse" data-bs-parent="#accordionTareas">
+                  <div class="accordion-body">Completa <code>docs/bitacora-validacion.md</code> con minimo 5 pruebas reales.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tarea3">3. Prepara la exposicion</button>
+                </h3>
+                <div id="tarea3" class="accordion-collapse collapse" data-bs-parent="#accordionTareas">
+                  <div class="accordion-body">Completa <code>docs/guion-exposicion.md</code>. Debes explicar objetivo, tecnologias, funcionamiento, pruebas, correcciones y aprendizajes.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tarea4">4. Guarda evidencias</button>
+                </h3>
+                <div id="tarea4" class="accordion-collapse collapse" data-bs-parent="#accordionTareas">
+                  <div class="accordion-body">Guarda capturas en la carpeta <code>evidencias/</code>. Incluye consola, pruebas, responsive y antes/despues.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-4 bg-dark text-white">
+      <div class="container d-flex justify-content-between gap-3 flex-wrap">
+        <p class="mb-0">Semana 15 - Taller practico</p>
+        <p class="mb-0">Documentacion, validacion y exposicion tecnica</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

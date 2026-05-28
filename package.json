@@ -1,0 +1,25 @@
+{
+  "name": "semana15-taller-documentacion-validacion-exposicion",
+  "version": "1.0.0",
+  "description": "Taller practico para documentar, validar, corregir y preparar la exposicion tecnica de un proyecto web.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "db": "json-server --watch db.json --port 3001",
+    "start": "concurrently \"npm run db\" \"npm run dev\"",
+    "check": "node scripts/check-project.mjs",
+    "reset-db": "node scripts/reset-db.mjs",
+    "evidencias": "node scripts/create-evidence-folders.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-legacy": "^5.4.2",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "chart.js": "^4.4.4",
+    "concurrently": "^8.2.2",
+    "json-server": "^0.17.4",
+    "sweetalert2": "^11.14.5",
+    "vite": "^5.4.8"
+  },
+  "devDependencies": {}
+}
