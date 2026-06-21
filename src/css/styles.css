@@ -94,3 +94,56 @@ body {
     padding: 1.25rem;
   }
 }
+
+
+/* ===== ENTREGA MEJORADA ===== */
+body{
+background:linear-gradient(135deg,#f3fff8,#eef5ff);
+min-height:100vh;
+}
+
+.hero-section{
+position:relative;
+overflow:hidden;
+}
+
+.hero-section::before,.hero-section::after{
+content:'';
+position:absolute;
+width:280px;
+height:280px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+animation:flotar 8s ease-in-out infinite;
+}
+
+.hero-section::before{top:-80px;right:-50px;}
+.hero-section::after{bottom:-100px;left:-50px;animation-delay:2s;}
+
+@keyframes flotar{
+50%{transform:translateY(-18px) scale(1.05);}
+}
+
+.hero-card,.form-card,.stat-card,.card{
+background:rgba(255,255,255,.78);
+backdrop-filter:blur(16px);
+box-shadow:0 10px 35px rgba(0,0,0,.10);
+transition:.3s ease;
+}
+
+.hero-card:hover,.form-card:hover,.stat-card:hover,.card:hover{
+transform:translateY(-4px);
+}
+
+.btn{
+transition:.3s ease;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.table{
+border-radius:16px;
+overflow:hidden;
+}

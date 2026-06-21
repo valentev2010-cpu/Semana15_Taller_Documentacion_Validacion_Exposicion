@@ -61,8 +61,8 @@ export function validarRegistro(datos, formulario) {
   // Actualmente la validacion acepta telefonos desde 7 digitos.
   // Mejora esta regla para que acepte exactamente 10 digitos.
   // Luego registra la prueba en docs/bitacora-validacion.md.
-  if (telefonoLimpio.length < 7) {
-    marcarError(campoTelefono, 'El telefono debe tener una cantidad valida de digitos.');
+  if (telefonoLimpio.length !== 10) {
+    marcarError(campoTelefono, 'El telefono debe tener exactamente 10 digitos.');
     valido = false;
   }
 
